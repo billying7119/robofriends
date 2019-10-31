@@ -1,28 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import CardList from './CardList';
+import SearchBox from './SearchBox';
+import { robots } from './robots';
 import './App.css';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+const state = {
+  robots: robots,
+  searchfield: ''
+}
+
+const App = () => {
+  return (
+    <div className='tc'>
+      <h1>RoboFriends</h1>
+      <SearchBox />
+      <CardList robots={robots}/>
+    </div>
+  );
 }
  
 export default App;
